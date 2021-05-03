@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="es">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="Vendor/fontawesome-free-5.15.3-web/css/all.min.css">
+    <title>Sistema de registro delincuentes</title>
+  </head>
+  <body>
+      <header class="bg-dark text-light text-center pt-3 pb-3 container-fluid">
+          <div class="row">
+              <div class="col col-md col-lg">
+                  <h1>Sistema de registro de delincuentes</h1>
+                  <nav>
+                      <a href="index.html">Administración de REOS</a>
+                  </nav>
+              </div>
+              <div class="col-12 col-md-6 col-lg-4">
+                <img src="img/badge.png" width = 100px height = auto>
+              </div>
+          </div>
+      </header>
+      <main class="container-fluid pt-5">
+          <div class="row">
+              <div class="col-12 col-md-6 col-lg-4">
+                  <div class="card">
+                      <div class="card-header bg-dark text-light">
+                          <span>Ingresar delincuente</span>
+                      </div>
+                      <div class="card-body">
+                            <div class="mb-3">
+                                <label for="nombre-txt" class="form-label">Nombre del delincuente</label>
+                                <input type="text" class="form-control" id="nombre-txt">
+                            </div>
+                            <div class="mb-3">
+                                <label for="apellido-txt" class="form-label">Apellido del delincuente</label>
+                                <input type="text" class="form-control" id=apellido-txt>
+                            </div>
+                            <div class="mb-3">
+                                <label for="crimen-num" class="form-label">Crimenes realizados</label>
+                                <input type="number" class="form-control" id="crimen-num" >
+                            </div>
+                            <div class="mb-3">
+                                <label for="detalle-txt" class="form-label">Detalle de crimenes</label>
+                                <textarea id="detalle-txt"></textarea>
+                             </div>
+                            <div class="mb-3">
+                                <label for="ciudad-select" class="form-label">Ciudad</label> 
+                                <select class="form-select" id="ciudad-select">
+                                </select>
+                            </div>
+                      </div>
+                  </div>
+                  <div class="card-footer">
+                      <div class="row">
+                          <div class="col-12 text-center">
+                              <button type="button" id="agregar-btn" class="btr btn-success">Agregar reo</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-12 col-md-6 col-lg-8">
+                  <div class="card">
+                      <div class="card-header bg-primary text-light">
+                        <span>Lista de delincuentes registrados</span>
+                      </div>
+                      <div class="card-body">
+                          <table class="table table-bordered table-hover table-striped">
+                              <thead class="bg-dark text-white">
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Detalle</th>
+                                    <th>Ciudad</th>
+                                    <th>Gravedad</th>
+                                </tr>
+                              </thead>
+                              <tbody id="tabla-reos">
+
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </main>
+      <footer>
+
+      </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="vendor/tinymce/js/tinymce/tinymce.min.js" ></script>
+    <script>
+        var miSelect=document.getElementById("ciudad-select");
+        var miOption=document.createElement("option");
+        miOption.setAttribute("value","1");
+        miOption.setAttribute("label","Viña del Mar");
+        miOption.setAttribute("selected","true");
+        miSelect.appendChild(miOption);
+        var miOption2=document.createElement("option");
+        miOption2.setAttribute("value","2");
+        miOption2.setAttribute("label","Quilpué");
+        miSelect.appendChild(miOption2);
+        var miOption3=document.createElement("option");
+        miOption3.setAttribute("value","3");
+        miOption3.setAttribute("label","Santiago");
+        miSelect.appendChild(miOption3);
+        var miOption4=document.createElement("option");
+        miOption4.setAttribute("value","4");
+        miOption4.setAttribute("label", "Otra ciudad")
+        miSelect.appendChild(miOption4);
+    </script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
